@@ -381,9 +381,3 @@ class BooksDataSource:
         ''' Returns a list of all the authors of the book with the specified book ID.
             See the BooksDataSource comment for a description of how an author is represented. '''
         return self.authors(book_id=book_id)
-
-if __name__ == '__main__':
-    test = BooksDataSource("books.csv", "authors.csv", "books_authors.csv")
-
-    print(test.authors().sort(key = itemgetter('last_name', 'first_name', 'birth_year')))
-    print(sorted(test.authors(), key = itemgetter('last_name')))
